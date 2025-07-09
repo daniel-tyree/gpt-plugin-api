@@ -1,0 +1,41 @@
+openapi: 3.0.1
+info:
+  title: Autotask Ticket Summary
+  description: Fetches current open tickets from Autotask and provides a GPT-generated summary.
+  version: "1.0.0"
+servers:
+   - url: https://retrievenotes.azurewebsites.net
+paths:
+  /api/RetrieveNotes:
+    get:
+      operationId: getAutotaskTicketSummary
+      summary: Get ticket summary and raw ticket data
+      parameters: []
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Summary generated successfully
+                  summary:
+                    type: string
+                    description: A GPT-generated summary of open tickets
+                  rawData:
+                    type: object
+                    description: Full raw ticket data from Autotask API
+        "500":
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  error:
+                    type: string
