@@ -22,9 +22,9 @@ paths:
                   message:
                     type: string
                     example: Summary generated successfully
-                  summary:
-                    type: string
-                    description: A GPT-generated summary of open tickets
+#                  summary:
+#                    type: string
+#                    description: A GPT-generated summary of open tickets
                   rawData:
                     type: object
                     description: Full raw ticket data from Autotask API
