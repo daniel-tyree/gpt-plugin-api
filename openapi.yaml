@@ -28,6 +28,17 @@ paths:
                   rawData:
                     type: object
                     description: Full raw ticket data from Autotask API
+                    properties:
+                        tickets:
+                            type: array
+                            description: List of Autotask tickets
+                            items:
+                                type: object
+                        notes:
+                            type: array
+                            description: List of associated ticket notes
+                            items:
+                                type: object
         "500":
           description: Error response
           content:
