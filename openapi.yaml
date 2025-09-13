@@ -3,6 +3,14 @@ info:
   title: Autotask Ticket Summary
   description: Fetches current open tickets from Autotask and provides a GPT-generated summary.
   version: "1.0.0"
+  components:
+  securitySchemes:
+    azureFunctionKey:
+      type: apiKey
+      name: x-functions-key
+      in: header
+security:
+  - azureFunctionKey: []
 servers:
    - url: https://retrievenotes.azurewebsites.net
 paths:
